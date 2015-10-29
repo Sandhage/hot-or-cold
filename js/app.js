@@ -23,6 +23,10 @@ $(document).ready(function(){
   	document.getElementById("newGame").addEventListener("click", function() {
   		hcAnswer = Math.floor(Math.random()*100) + 1;
   		console.log(hcAnswer)
+
+  		guessCount = 0;
+
+  		document.getElementById("guessList").innerHTML = '';
   	});
 
   	// Guess Events and Functions
@@ -30,7 +34,7 @@ $(document).ready(function(){
       e.preventDefault();
 
       guessCount++;
-      document.getElementById('count').innerHTML = guessCount;
+      document.getElementById("count").innerHTML = guessCount;
 
       oldGuess = newGuess;
       console.log('oldGuess: ' + oldGuess);
@@ -38,22 +42,28 @@ $(document).ready(function(){
       newGuess = document.querySelector("#userGuess").value;
   		console.log('new(est)Guess: ' + newGuess);
 
-      document.getElementById('guessList').innerHTML += '<li>' + newGuess + '</li>';
+      document.getElementById("guessList").innerHTML += '<li>' + newGuess + '</li>';
 
       var difference = Math.abs(newGuess - hcAnswer);
       var feedback = null;
 
       if ( newGuess == hcAnswer ) {
-        feedback = 'You win! Wow!';
+        feedback = 'You won in: ' + guessCount + ' guesses -- Wow!';
       } else if ( difference <= 10 ) {
-        feedback = 'Is that your mixtape? THATS SUPER HOT FIRE';
+        feedback = 'That guess must have been your mixtape -- BECAUSE IT WAS SUPER HOT FIRE';
       } else if ( difference <= 20 ) {
-        alert('Pretty hot!!');
+        feedback = 'Pretty hot!!';
       } else if ( difference <= 30 ) {
-        alert('Tepid. Lukewarm. Try again.')
-      }
+        feedback = 'Tepid. Lukewarm. Try again.';
+      } else if ( difference <= 40 ) {
+      	feedback = 'Your guess is akin to my heart: Cold and Slimey.'
+      } else if ( difference <= 60 ) {
+      	feedback = 'You could build a snowman with those guesses. Try another!';
+      } else ( difference >= 99 ) {
+      	feedback = 'Too cold to think. Brainfreeze. Frozen solid.';
+      };
 
-      document.getElementById('feedback').innerHTML = feedback;
+      document.getElementById("feedback").innerHTML = feedback;
   	})
 
 });
