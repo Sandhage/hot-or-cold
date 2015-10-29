@@ -26,8 +26,9 @@ $(document).ready(function(){
 
   		guessCount = 0;
       document.getElementById("count").innerHTML = guessCount;
-
-  		document.getElementById("guessList").innerHTML = '';
+      document.getElementById("feedback").innerHTML = 'Make your Guess!';
+  		document.getElementById("guessList").innerHTML = '';      
+      document.getElementById("userGuess").reset();
   	});
 
   	// Guess Events and Functions
