@@ -28,7 +28,7 @@ $(document).ready(function(){
       document.getElementById("count").innerHTML = guessCount;
       document.getElementById("feedback").innerHTML = 'Make your Guess!';
   		document.getElementById("guessList").innerHTML = '';      
-      document.getElementById("userGuess").reset();
+      document.getElementById("guessForm").reset();
   	});
 
   	// Guess Events and Functions
@@ -91,7 +91,7 @@ $(document).ready(function(){
 
 
       document.getElementById("feedback").innerHTML = feedback;
-      // document.getElementById("userGuess").reset();
+      document.getElementById("guessForm").reset();
   	})
 
 });
@@ -100,4 +100,3 @@ $(document).ready(function(){
 // THINGS TO DO WHEN REFACTORING:
 // 1. make Math.floor a function to keep it neat and tidy.
 // 2. check if there are any repetitive lines of code that can become functions.
-// 3. make comparative feedback based on previous guess.
