@@ -8,13 +8,13 @@ $(document).ready(function(){
     console.log(hcAnswer);
   var guessCount = 0;
 
-	/*--- Display information modal box ---*/
+	  // Display information modal box
   	$(".what").click(function(){
     	$(".overlay").fadeIn(1000);
 
   	});
 
-  	/*--- Hide information modal box ---*/
+  	// Hide information modal box
   	$("a.close").click(function(){
   		$(".overlay").fadeOut(1000);
   	});
@@ -95,8 +95,3 @@ $(document).ready(function(){
   	})
 
 });
-
-
-// THINGS TO DO WHEN REFACTORING:
-// 1. make Math.floor a function to keep it neat and tidy.
-// 2. check if there are any repetitive lines of code that can become functions.
